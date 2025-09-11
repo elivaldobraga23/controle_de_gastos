@@ -1,0 +1,202 @@
+/* Reset básico para remover margens/paddings padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Centralização da tela principal */
+body {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Caixa principal (formulário) */
+main{
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 350px;
+    text-align: center;
+    font-size: 15pt;
+}
+
+/* Título */
+main h1 {
+    font-size: 25pt;
+    margin-bottom: 20px;
+}
+
+/* Labels (descrição dos inputs) */
+label {
+    display: block;
+    text-align: left;
+    margin-top: 15px; /* espaço superior entre os labels */
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Inputs e Select */
+input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s;
+    margin-top: 5px; /* uniformiza espaçamento entre campos */
+}
+
+/* Destaque quando campo está em foco */
+input:focus, select:focus {
+    border-color: dodgerblue;
+}
+
+/* Botão principal */
+#butaoAdicionar,
+#butAdicionarMais,
+#btnVoltar,
+#btnExcluirTodos{
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Botões lado a lado (Adicionar mais e Voltar) */
+input#butAdicionarMais, #btnVoltar {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 12px;
+}
+
+/* Outros botões (mostrar, totais, voltar registro, exportar Excel) */
+#btnMostrar,
+#btnVerTotais,
+#enviarParaExcel,
+#btnVoltarRegistro
+{
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Ajustes específicos para botões menores */
+#btnVoltarRegistro, input#enviarParaExcel {
+    margin-top: 1px;
+    margin-bottom: 50px;
+}
+
+/* Botão de ver totais */
+#btnVerTotais {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Hover de botões principais */
+#butaoAdicionar:hover,
+#butAdicionarMais:hover,
+#btnVoltar:hover{
+    background-color: darkblue;
+}
+
+/* Hover de botões secundários */
+#btnMostrar:hover,
+#btnVerTotais:hover,
+#enviarParaExcel:hover,
+#btnVoltarRegistro:hover {
+    background-color: aqua;
+}
+
+/* Página de registros e resultados por categoria */
+div#pagRegistros, div#resCategoria {
+    display: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 80vw;
+    height: 90vh;
+    text-align: center;
+    font-size: 12pt;
+    overflow-y: auto; /* Scroll vertical automático */
+}
+
+/* Mensagens de erro */
+.mensagem-erro {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+    text-align: start;
+}
+
+/* Espaçamento entre resultados */
+div#res > p {
+    margin: 5px;    
+}
+
+/* Resultado por categoria inicialmente oculto */
+div#resCategoria {
+    display: none;
+}
+
+/* Parágrafo de categorias */
+p#paragcategorias {
+    margin: 10px;
+    padding: 3px;  
+}
+
+/* Botão excluir (ícone de lixeira) */
+#btnexcluir {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Butão excluir todos os registros */
+#btnExcluirTodos{
+    background-color: rgb(197, 0, 0);
+    color: white;
+    font-size: 14px;
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 0;
+    
+}
+
+/* Estilo do ícone (Google Material Symbols) */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 350,
+  'GRAD' 0,
+  'opsz' 24;
+  color: red;
+}
+
+
+
+

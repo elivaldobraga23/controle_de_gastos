@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete" />
+    <title>Controle de Gastos</title>
+  </head>
+  <body>
+    <main id="mainone">
+      <h1>Controle de Gastos</h1>
+      <!-- Data -->
+      
+        <label for="data" class="texto">Data</label>
+        <input type="datetime-local" name="data" id="data">
+      
+
+      <!-- Categoria -->
+      <label for="categoria" class="texto">Categoria</label>
+      <select id="categoria" name="categoria" required>
+        <option value="" selected disabled>Selecione uma categoria</option>
+         <optgroup label="Despesas Fixas">
+          <option value="aluguel">Aluguel</option>
+          <option value="energia">Energia</option>
+          <option value="agua">Água</option>
+          <option value="internet">Internet</option>
+          <option value="telefone">Telefone</option>
+          <option value="academia">Academia</option>
+          <option value="cartao">Cartão de Crédito</option>
+        </optgroup>
+
+        <!-- Despesas variáveis -->
+        <optgroup label="Despesas Variáveis">
+          <option value="alimentacao">Alimentação</option>
+          <option value="mercado">Supermercado</option>
+          <option value="transporte">Transporte</option>
+          <option value="saude">Saúde</option>
+          <option value="educacao">Educação</option>
+          <option value="lazer">Lazer</option>
+          <option value="assinaturas">Assinaturas / Streaming</option>
+          <option value="pets">Pets</option>
+          <option value="roupas">Roupas / Acessórios</option>
+          <option value="manutencao">Manutenção / Casa</option>
+          <option value="outras_despesas">Outras despesas</option>
+        </optgroup>
+      </select>
+      <span id="erro-categoria" class="mensagem-erro"></span>
+
+      <!-- Valor -->
+       <label for="valor" class="texto">Valor</label>
+       <input type="text" name="valor" id="valor" placeholder="R$0,00">
+       <span id="erro-valor" class="mensagem-erro"></span>
+
+      <!-- Forma De Pagamento -->
+       <label for="formaP" class="texto">Forma de Pagamento</label>
+       <select name="formaP" id="formaP">
+        <option value="" selected disabled>Selecione uma forma de pagamento</option>
+        <option value="dinheiro">Dinheiro</option>
+        <option value="pix">Pix</option>
+        <option value="boleto">Boleto</option>
+        <option value="cCredito">Cartão de Crédito</option>
+        <option value="cDebito">Cartão de Débito</option>
+       </select>
+       <span id="erro-formaP" class="mensagem-erro"></span>
+
+      <!-- Descrição -->
+       <label for="descricao" class="texto">Descrição</label>
+       <input type="text" name="descricao" id="descricao">
+       <span id="erro-descricao" class="mensagem-erro"></span>
+
+       <!-- Butão de Adicionar -->
+       <input id="butaoAdicionar" type="button" value="Adicionar" onclick="adicionar()">
+
+       <!-- Butão Mostrar Registros -->
+       <input id="btnMostrar" type="button" value="Mostrar Registros" onclick="mostrarRegistros()">
+
+    </main>
+
+    <div id="pagRegistros">
+      <!-- Butão Adicionar Mais -->
+      <input id="butAdicionarMais" type="button" value="Adicionar Mais" onclick="adicionarMais()">
+
+      <!-- Butão para Ver os Totais por Categoria -->
+      <input id="btnVerTotais" type="button" value="Totais por Categorias" onclick="mostrarTotaisPorCategoria()">
+
+      <!-- Butão para Exportar para o Excek -->
+      <input id="enviarParaExcel" type="button" value="Exportar para Excel" onclick="exportarParaExcel()">
+      
+      
+      <div id="res">
+        
+      </div>
+
+    </div>
+    <div id="resCategoria">
+
+    </div>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+
+    <script src="script.js"></script>
+    
+  </body>
+</html>

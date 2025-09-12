@@ -163,7 +163,7 @@ function mostrarRegistros() {
 
     res.innerHTML += `<p><strong>Valor Total Gasto: ${totalGasto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></p>`;
 
-    res.innerHTML += '<button id="btnExcluirTodos" onclick="excluirTodosRegistros()"> Excluir Todos os Registros </button>'
+    res.innerHTML += '<button id="btnExcluirTodos" onclick="excluirTodosRegistros()">Excluir Todos</button>'
 }
 
 
@@ -319,7 +319,7 @@ function exportarParaExcel() {
         const nomeMes = nomesMeses[parseInt(mesNum, 10) - 1];
 
         const dados = registrosPorMes[chave].map((r, i) => ({
-            "Registro": i + 1,
+            "Registro": `${i + 1}º`,
             "Data / Hora": r.dataHora,
             "Categoria": r.categoria,
             "Valor": r.valor,
@@ -333,7 +333,7 @@ function exportarParaExcel() {
 
         // Ajustar largura das colunas
         ws['!cols'] = [
-            { wch: 10 },
+            { wch: 30 },
             { wch: 20 },
             { wch: 20 },
             { wch: 15 },
